@@ -1,0 +1,16 @@
+---
+interface Props {
+  googleSheetUrl: string;
+}
+
+const { googleSheetUrl } = Astro.props;
+
+---
+
+<div class="m-10 border-2 border-darkBlue">
+  <iframe
+    src={googleSheetUrl}
+    width="1300px"
+    height="700px"
+  ></iframe>
+</div>

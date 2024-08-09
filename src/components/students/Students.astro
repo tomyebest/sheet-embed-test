@@ -1,0 +1,62 @@
+---
+
+import Placeholder from '../../images/placeholder.webp'
+
+const forStudentsTitle = "For Students";
+const mainTitle = "Optimise Learning";
+const mainSubtitle = "Your Tutoring Co was founded by a group of teachers who understand that for a variety of reasons, not all students achieve the results they are capable of at school.";
+const mainParagraph = "Research has proven that with the right teaching, students can markedly improve their school achievements and learning confidence.";
+const quoteText = "Your Tutoring Co's mission is to provide students with the opportunity to access the expert and specialised tuition they need to achieve their learning goals, at prices they can afford.";
+const quoteAuthor = "Thomas Hand";
+const quoteAuthorImage = Placeholder;
+const assurancesTitle = "Students and parents can feel assured that tutors featured on the Your Tutoring Co website:";
+const benefits = [
+    "Are qualified teachers, pre-service teachers or university students studying a specific curriculum area within a Graduate Diploma of Education program.",
+    "Has a positive and current WWCC.",
+    "Has demonstrated a passion for assisting students to achieve their best.",
+    "Are outstanding teachers and communicators.",
+    "Has an excellent knowledge of the Australian National Curriculum.",
+    "Has successfully completed an intensive application, induction and training process.",
+    "Has a friendly and encouraging disposition."
+];
+const ctaText = "Learn How It Works";
+const ctaLink = "#";
+
+
+
+// Button
+import GradientButton from "../core/GradientButton";
+---
+
+<div id="students-intro" class="bg-white px-6 py-32 lg:px-8 active:underline-offset-2 active:decoration-lime-200 border-b border-lime-800/10">
+    <div class="mx-auto max-w-5xl text-base leading-7 text-zinc-800">
+        <p class="text-base font-semibold leading-7 text-lightOrange">{forStudentsTitle}</p>
+        <h1 class="mt-2 text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">{mainTitle}</h1>
+        <p class="mt-6 text-xl leading-8">{mainSubtitle}</p>
+        <p class="mt-6 text-xl leading-8">{mainParagraph}</p>
+        <figure class="mt-10 border-l border-lightOrange pl-9 py-3 pr-2">
+            <blockquote class="font-semibold text-zinc-950">
+                <p>"{quoteText}"</p>
+            </blockquote>
+            <figcaption class="mt-6 flex gap-x-4">
+                <img class="h-10 w-10 flex-none rounded-full border-lightOrange border-2 bg-lightOrange" src={quoteAuthorImage.src} alt="">
+                <div class="text-sm leading-9"><strong class="font-semibold text-zinc-950">{quoteAuthor}</strong></div>
+            </figcaption>
+        </figure>
+        <div class="mt-16 max-w-5xl">
+            <h3 class="mt-1 text-xl font-bold tracking-tight text-zinc-950 sm:text-2xl">{assurancesTitle}</h3>
+            <ul role="list" class="mt-6 max-w-4xl space-y-3 text-zinc-800">
+                {benefits.map(benefit => (
+                    <li class="flex gap-x-3">
+                        <svg class="mt-1 h-5 w-5 flex-none text-lightOrange" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                        </svg>
+                        <span>{benefit}</span>
+                    </li>
+                ))}
+            </ul>
+            <p class="mt-12 mb-6 font-semibold">Join us and take the first step towards improving your academic achievements and confidence.</p>
+            <GradientButton text="Learn How it Works" link="#"/>
+                    </div>
+    </div>
+</div>

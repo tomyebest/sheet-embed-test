@@ -1,0 +1,75 @@
+---
+
+// SVGs
+import AcademicHat from '../svg/AcademicHat.astro'
+import AdjustTool from '../svg/AdjustTool.astro'
+import BrightCursor from '../svg/BrightCursor.astro'
+import SmileyFace from '../svg/SmileyFace.astro'
+// end SVGs
+
+import OnlineClassroomFeature from '../../images/desmos_graph_small.webp';
+import OnlineClassroomFeatureAlt from '../../images/online-classroom-4.webp'
+import OptimiseClassroom from '../../images/online-classroom.webp';
+
+import SysReq from '../global/SysReq.astro';
+
+const onlineClassroomTitle = "Our Online Classrooms";
+const onlineClassroomDescription = "Our secure online classrooms are designed to provide the most advanced, interactive, personalised and effective online learning environment for students.";
+
+const featureList = [
+    {
+        title: "Advanced Learning Environment. ",
+        description: "Our secure online classrooms are meticulously designed to offer a highly interactive and personalised learning experience for students.",
+        icon: AcademicHat
+    },
+    {
+        title: "Interactive Tools. ",
+        description: "The classrooms are equipped with a variety of tools to enrich the learning process. These include an online whiteboard, drawing and text tools, a PDF creator, as well as voice and video conferencing capabilities.",
+        icon: AdjustTool
+    },
+    {
+        title: "Ease of Access. ",
+        description: "Students can effortlessly access their online classroom by logging into their dashboard on our website and clicking on a personalised link. This eliminates the need for any additional plugins or downloads.",
+        icon: BrightCursor
+    },
+    {
+        title: "Minimal Technical Requirements. ",
+        description: "All that students need for their online lessons is a stable internet connection and a computer with audio and camera functionalities enabled. A mouse and a pair of headphones are also advised for an optimal learning experience.",
+        icon: SmileyFace
+    }
+];
+
+---
+
+<div id="students-oc" class="bg-lightestBlue relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 text-zinc-800 border-lime-800/10 border-b">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-0">
+        <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div class="lg:pr-8">
+                <div class="lg:max-w-xl">
+                    <h2 class="mt-2 text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">{onlineClassroomTitle}</h2>
+                    <p class="mt-6 text-base font-semibold leading-7 text-zinc-950">{onlineClassroomDescription}</p>
+                </div>
+            </div>
+        </div>
+        <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] border-2 border-lime-800" src={OptimiseClassroom.src} alt="">
+        </div>
+        <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div class="lg:pr-4">
+                <div class="max-w-xl text-base leading-7 lg:max-w-xl">
+                  <ul role="list" class="space-y-6 mt-2 lg:mt-6">
+                    {featureList.map((feature, index) => (
+                        <li class="flex gap-x-3 align-items-center">  {/* Flex container */}
+                            <feature.icon />
+                            <span>
+                                <strong class="font-semibold text-zinc-950">{feature.title}</strong> {feature.description}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                    <SysReq />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+---
+import Placeholder from '../../images/placeholder.webp'
+import AccountCreationStudent from '../../images/account-creation-student.webp'
+import TutorPayment from '../../images/tutor-payment.webp'
+import ContactTutor from '../../images/teenager-messaging-tutor.webp'
+import SecureClassroom from '../../images/secure-classroom.webp'
+import ChooseTutors from '../../images/choose-tutors.webp'
+import LessonRecording from '../../images/lesson-recording.webp'
+import TutorSelect from '../../images/select-english-tutor.webp'
+
+const howItWorksTitle = "How it works";
+const howItWorksDescription = "Your journey with Your Tutoring Co made simple and efficient. Follow these steps to get started.";
+
+const steps = [
+    {
+        img: AccountCreationStudent,
+        number: "1.",
+        title: "Account Creation",
+        description: "Begin by creating an account with Your Tutoring Co. This gives both students and parents access to our wide range of tutors."
+    },
+    {
+        img: TutorSelect,
+        number: "2.",
+        title: "Tutor Selection",
+        description: "Navigate to our tutor pages to select a tutor. Choose based on expertise, knowledge, and skills that match your needs."
+    },
+    {
+        img: ContactTutor,
+        number: "3.",
+        title: "Direct Contact",
+        description: "Reach out to your chosen tutor directly via the Your Tutoring Co website to schedule a lesson."
+    },
+    {
+        img: TutorPayment,
+        number: "4.",
+        title: "Lesson Confirmation & Payment",
+        description: "Once the tutor confirms the lesson, make a payment in advance to secure your slot."
+    },
+    {
+        img: SecureClassroom,
+        number: "5.",
+        title: "Receiving Log-In Details",
+        description: "After your payment, we’ll send you the log-in details for your secure online classroom."
+    },
+    {
+        img: LessonRecording,
+        number: "6.",
+        title: "Lesson Recording",
+        description: "All lessons are recorded for your convenience. After the lesson, you’ll receive a video recording in your email, making it easy to review and revise the material."
+    }
+];
+---
+
+<div  id="how-it-works" class="border-b border-lime-800/10 py-24 sm:py-32 text-zinc-800">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl lg:mx-0">
+        <h2 class="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">{howItWorksTitle}</h2>
+        <p class="mt-6 text-lg leading-8">{howItWorksDescription}</p>
+      </div>
+      <ul role="list" class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        {steps.map(step => (
+            <li>
+              <img class="aspect-[3/2] w-full rounded-2xl object-cover mb-4 shadow-lg border-2 border-lime-800" src={step.img.src} alt="">
+              <span class="font-black text-lg">{step.number}</span>
+              <h3 class="mt-1 text-lg font-semibold leading-8 tracking-tight text-zinc-950 underline underline-offset-2 decoration-lime-200 decoration-2">{step.title}</h3>
+              <p class="text-base leading-7">{step.description}</p>
+            </li>
+        ))}
+      </ul>
+    </div>
+</div>

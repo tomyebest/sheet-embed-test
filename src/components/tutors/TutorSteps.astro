@@ -1,0 +1,64 @@
+---
+import Placeholder from '../../images/placeholder.webp'
+
+const howItWorksTitle = "How it works";
+const howItWorksDescription = "Your journey with Your Tutoring Co made simple and efficient. Follow these steps to get started.";
+
+const steps = [
+    {
+        img: Placeholder,
+        number: "1.",
+        title: "Application and Video Submission",
+        description: "A tutor applies to join Your Tutoring Co and submits a video of a mock mini-lesson."
+    },
+    {
+        img: Placeholder,
+        number: "2.",
+        title: "Interview Invitation",
+        description: "After reviewing the video, a member of the Your Tutoring Co administration team may invite the tutor for an interview."
+    },
+    {
+        img: Placeholder,
+        number: "3.",
+        title: "Reference Check",
+        description: "Post-interview, the administration team conducts a reference check on the tutor."
+    },
+    {
+        img: Placeholder,
+        number: "4.",
+        title: "Agreement and Documentation",
+        description: "Upon a positive reference check, the tutor receives, signs, and returns the Your Tutoring Co agreement along with required documents like WWCC and academic transcript."
+    },
+    {
+        img: Placeholder,
+        number: "5.",
+        title: "Profile and Onboarding",
+        description: "The tutor completes their profile on the Your Tutoring Co website and receives login details for the online classroom."
+    },
+    {
+        img: Placeholder,
+        number: "6.",
+        title: "Tutoring and Invoicing",
+        description: "The tutor commences lessons and invoices Your Tutoring Co every fortnight for the lessons they've conducted."
+    }
+];
+---
+
+<div  id="tutors-how-it-works" class="border-b border-lime-800/10 py-24 sm:py-32 text-zinc-800">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl lg:mx-0">
+        <h2 class="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">{howItWorksTitle}</h2>
+        <p class="mt-6 text-lg leading-8">{howItWorksDescription}</p>
+      </div>
+      <ul role="list" class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        {steps.map(step => (
+            <li>
+              <img class="aspect-[3/2] w-full rounded-2xl object-cover mb-4 shadow-lg border-2 border-lime-800" src={step.img.src} alt="">
+              <span class="font-black text-lg">{step.number}</span>
+              <h3 class="mt-1 text-lg font-semibold leading-8 tracking-tight text-zinc-950 underline underline-offset-2 decoration-lime-200 decoration-2">{step.title}</h3>
+              <p class="text-base leading-7">{step.description}</p>
+            </li>
+        ))}
+      </ul>
+    </div>
+</div>

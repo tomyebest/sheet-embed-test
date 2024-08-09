@@ -1,0 +1,65 @@
+---
+import YTCLogo from '../../images/ytc-transparent-logo.png'
+
+const links = [
+  {
+    label: 'Students',
+    type: 'dropdown',
+    items: [
+      { label: 'Why Your Tutoring Co?', href: '/#students-intro'},
+      { label: 'How It Works', href: '/#how-it-works'},
+      { label: 'Online Classrooms', href: '/#students-oc' },
+    ]
+  },
+  { label: 'Insights', href: '#' },
+  { label: 'Contact', href: '/contact/' }
+];
+
+const navButtonLink = "#";
+const navButtonText = "Get Started";
+---
+
+<nav class="bg-green-50/90 sticky top-0 z-50 sm:bg-green-50/90 sm:backdrop-blur justify-center border-b border-lime-800/10">
+  <div class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-2 lg:px-8">
+    <a href="/" class="flex items-center">
+      <img src={YTCLogo.src} class="h-20 w-auto" alt="YTC Logo" />
+    </a>
+    <div class="hidden w-full md:flex md:w-auto" id="navbar-dropdown">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-lime-800/10 rounded-lg bg-green-50/90 md:flex-row md:space-x-8 md:mt-0 md:border-0">
+        {links.map(link => (
+          link.type === 'dropdown' ? (
+            <li>
+              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full text-zinc-950 rounded hover:outline outline-lime-200 px-3 py-1.5 md:w-auto">{link.label}
+                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </button>
+              <div id="dropdownNavbar" class="z-10 hidden font-normal bg-green-50/90 divide-y divide-lime-800/10 rounded-lg shadow w-44">
+                <ul class="text-sm text-zinc-950" aria-labelledby="dropdownLargeButton">
+                  {link.items.map(item => (
+                    <li>
+                      <a href={item.href} class="block px-3 py-2 hover:bg-lime-200">{item.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ) : (
+            <li>
+              <a href={link.href} class="block text-zinc-950 rounded hover:outline outline-lime-200 px-3 py-1.5 focus:outline-none">{link.label}</a>
+            </li>
+          )
+        ))}
+      </ul>
+    </div>
+    <div class="flex items-center p-4 md:flex-row-reverse">
+      <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex mr-2 items-center p-2 w-10 h-10 justify-center text-sm text-zinc-950 rounded-lg md:hidden hover:outline outline-lime-200" aria-controls="navbar-dropdown" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+      <a href={navButtonLink} class="rounded-md bg-lime-200 px-3 py-2 text-sm font-semibold text-zinc-950 shadow-sm hover:bg-lime-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">{navButtonText}</a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,45 @@
+/* https://docs.astro.build/en/guides/fonts/ */
+
+h3, h4, h5, h6 {
+    /* font-family: var(--font-geist-mono); */
+    font-weight: semibold;
+}
+
+h1 {
+    /* font-family: var(--font-geist-sans); */
+    @apply font-extrabold;
+   @apply text-4xl sm:text-6xl md:text-6xl;
+
+}
+
+h2 {
+    @apply text-2xl sm:text-2xl md:text-4xl;
+    /* font-family: var(--font-geist-sans); */
+    @apply font-semibold;
+}
+
+h3 {
+    @apply text-xl sm:text-2xl md:text-5xl font-bold;
+    /* font-family: var(--font-geist-mono); */
+}
+
+h4 {
+    @apply text-xl sm:text-3xl md:text-4xl font-bold;
+    /* font-family: var(--font-geist-mono); */
+}
+
+h5 {
+    @apply text-lg sm:text-2xl md:text-3xl font-bold;
+    /* font-family: var(--font-geist-mono); */
+}
+
+h6 {
+    @apply text-lg sm:text-xl md:text-2xl font-bold;
+    /* font-family: var(--font-geist-mono); */
+}
+
+p {
+    /* font-family: var(--font-geist-sans); */
+    @apply leading-6;
+}
+
